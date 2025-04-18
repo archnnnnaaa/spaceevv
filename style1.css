@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(
+        35deg,
+        #000000,  
+        #2E0854,
+        #1a237e,
+        #4B0082,
+        #000000
+    );
+    animation: gradientFlow 8s linear infinite, pulse 5s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+ 
+/* Background animation */
+@keyframes gradientFlow {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 10% 10%; }
+    100% { background-position: 20% 20%; }
+}
+
+/* Twinkling stars overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url("https://media2.giphy.com/media/3o7aDcrsww5Ybp18hq/giphy.gif?cid=6c09b9521bbu3yesh121j123qzt1idickwc06efzkd37y9rc&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g") repeat;
+    opacity: 0.2;
+    z-index: -1;
+    pointer-events: none;
+    animation: twinkling 200s linear infinite;
+}
+
+@keyframes twinkling {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
+}
